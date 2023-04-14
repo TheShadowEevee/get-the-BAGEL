@@ -1,12 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+/**
+ *  Copyright (c) 2023 Michael Malloy, Enter-Name
+ *  CNIT 25501 Final Project - 
  */
 
-/**
- *
- * @author theso
- */
+// TODO: Replace Boilerplate
+// TODO: Disable spell-checking my name :/ (-MM)
+
 public class Controller extends javax.swing.JFrame {
 
     /**
@@ -14,6 +13,7 @@ public class Controller extends javax.swing.JFrame {
      */
     public Controller() {
         initComponents();
+        setupGame();
     }
 
     /**
@@ -25,25 +25,352 @@ public class Controller extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        jSplitPane1 = new javax.swing.JSplitPane();
+        leftTextPanel = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        statisticsPane = new javax.swing.JTextPane();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        adventurePane = new javax.swing.JTextPane();
+        rightButtonPanel = new javax.swing.JPanel();
+        smallHitButton = new javax.swing.JButton();
+        mediumHitButton = new javax.swing.JButton();
+        largeHitButton = new javax.swing.JButton();
+        smallHealButton = new javax.swing.JButton();
+        mediumHealButton = new javax.swing.JButton();
+        largeHealButton = new javax.swing.JButton();
+        playerNameTextField = new javax.swing.JTextField();
+        updatePlayerNameButton = new javax.swing.JButton();
+        upDirectionButton = new javax.swing.JButton();
+        downDirectionButton = new javax.swing.JButton();
+        rightDirectionButton = new javax.swing.JButton();
+        leftDirectionButton = new javax.swing.JButton();
+        menuBar = new javax.swing.JMenuBar();
+        menuFileDropdown = new javax.swing.JMenu();
+        quitMenuButton = new javax.swing.JMenuItem();
+        menuEditDropdown = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("[Bagel] - Layout Test");
+        setMinimumSize(new java.awt.Dimension(500, 300));
+        setPreferredSize(new java.awt.Dimension(500, 300));
+
+        leftTextPanel.setMinimumSize(new java.awt.Dimension(200, 277));
+        leftTextPanel.setPreferredSize(new java.awt.Dimension(200, 277));
+
+        statisticsPane.setEditable(false);
+        statisticsPane.setAutoscrolls(false);
+        statisticsPane.setFocusable(false);
+        statisticsPane.setMinimumSize(new java.awt.Dimension(125, 150));
+        statisticsPane.setName(""); // NOI18N
+        statisticsPane.setPreferredSize(new java.awt.Dimension(125, 150));
+        statisticsPane.setRequestFocusEnabled(false);
+        jScrollPane1.setViewportView(statisticsPane);
+
+        adventurePane.setEditable(false);
+        adventurePane.setAutoscrolls(false);
+        adventurePane.setFocusable(false);
+        adventurePane.setMinimumSize(new java.awt.Dimension(1000, 1000));
+        adventurePane.setName(""); // NOI18N
+        adventurePane.setPreferredSize(new java.awt.Dimension(125, 150));
+        adventurePane.setRequestFocusEnabled(false);
+        jScrollPane2.setViewportView(adventurePane);
+
+        javax.swing.GroupLayout leftTextPanelLayout = new javax.swing.GroupLayout(leftTextPanel);
+        leftTextPanel.setLayout(leftTextPanelLayout);
+        leftTextPanelLayout.setHorizontalGroup(
+            leftTextPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(leftTextPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(leftTextPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1))
+                .addContainerGap())
+        );
+        leftTextPanelLayout.setVerticalGroup(
+            leftTextPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(leftTextPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(9, Short.MAX_VALUE))
+        );
+
+        jSplitPane1.setLeftComponent(leftTextPanel);
+
+        rightButtonPanel.setMinimumSize(new java.awt.Dimension(150, 277));
+        rightButtonPanel.setOpaque(false);
+        rightButtonPanel.setPreferredSize(new java.awt.Dimension(150, 277));
+
+        smallHitButton.setText("Small Hit (-1)");
+        smallHitButton.setToolTipText("");
+        smallHitButton.setMaximumSize(new java.awt.Dimension(135, 23));
+        smallHitButton.setMinimumSize(new java.awt.Dimension(135, 23));
+        smallHitButton.setPreferredSize(new java.awt.Dimension(135, 23));
+        smallHitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                smallHitButtonActionPerformed(evt);
+            }
+        });
+
+        mediumHitButton.setText("Medium Hit (-10)");
+        mediumHitButton.setMaximumSize(new java.awt.Dimension(135, 23));
+        mediumHitButton.setMinimumSize(new java.awt.Dimension(135, 23));
+        mediumHitButton.setPreferredSize(new java.awt.Dimension(135, 23));
+        mediumHitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mediumHitButtonActionPerformed(evt);
+            }
+        });
+
+        largeHitButton.setText("Large Hit (-100)");
+        largeHitButton.setMaximumSize(new java.awt.Dimension(135, 23));
+        largeHitButton.setMinimumSize(new java.awt.Dimension(135, 23));
+        largeHitButton.setPreferredSize(new java.awt.Dimension(135, 23));
+        largeHitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                largeHitButtonActionPerformed(evt);
+            }
+        });
+
+        smallHealButton.setText("Small Heal (+1)");
+        smallHealButton.setToolTipText("");
+        smallHealButton.setMaximumSize(new java.awt.Dimension(135, 23));
+        smallHealButton.setMinimumSize(new java.awt.Dimension(135, 23));
+        smallHealButton.setPreferredSize(new java.awt.Dimension(135, 23));
+        smallHealButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                smallHealButton1ActionPerformed(evt);
+            }
+        });
+
+        mediumHealButton.setText("Medium Heal (+10)");
+        mediumHealButton.setMaximumSize(new java.awt.Dimension(135, 23));
+        mediumHealButton.setMinimumSize(new java.awt.Dimension(135, 23));
+        mediumHealButton.setPreferredSize(new java.awt.Dimension(135, 23));
+        mediumHealButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mediumHealButton1ActionPerformed(evt);
+            }
+        });
+
+        largeHealButton.setText("Large Heal (+100)");
+        largeHealButton.setMaximumSize(new java.awt.Dimension(135, 23));
+        largeHealButton.setMinimumSize(new java.awt.Dimension(135, 23));
+        largeHealButton.setPreferredSize(new java.awt.Dimension(135, 23));
+        largeHealButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                largeHealButton1ActionPerformed(evt);
+            }
+        });
+
+        playerNameTextField.setText("Debug-LayoutDemo");
+        playerNameTextField.setMaximumSize(new java.awt.Dimension(135, 28));
+        playerNameTextField.setMinimumSize(new java.awt.Dimension(135, 28));
+        playerNameTextField.setName(""); // NOI18N
+        playerNameTextField.setPreferredSize(new java.awt.Dimension(135, 28));
+
+        updatePlayerNameButton.setText("Update Name");
+        updatePlayerNameButton.setToolTipText("");
+        updatePlayerNameButton.setMaximumSize(new java.awt.Dimension(135, 23));
+        updatePlayerNameButton.setMinimumSize(new java.awt.Dimension(135, 23));
+        updatePlayerNameButton.setPreferredSize(new java.awt.Dimension(135, 23));
+        updatePlayerNameButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updatePlayerNameButtonActionPerformed(evt);
+            }
+        });
+
+        upDirectionButton.setText("^");
+        upDirectionButton.setPreferredSize(new java.awt.Dimension(40, 23));
+        upDirectionButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                upDirectionButtonActionPerformed(evt);
+            }
+        });
+
+        downDirectionButton.setText("∨");
+        downDirectionButton.setMaximumSize(new java.awt.Dimension(40, 23));
+        downDirectionButton.setMinimumSize(new java.awt.Dimension(40, 23));
+        downDirectionButton.setPreferredSize(new java.awt.Dimension(40, 23));
+        downDirectionButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                downDirectionButtonActionPerformed(evt);
+            }
+        });
+
+        rightDirectionButton.setText(">");
+        rightDirectionButton.setMaximumSize(new java.awt.Dimension(40, 23));
+        rightDirectionButton.setMinimumSize(new java.awt.Dimension(40, 23));
+        rightDirectionButton.setPreferredSize(new java.awt.Dimension(40, 23));
+        rightDirectionButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rightDirectionButtonActionPerformed(evt);
+            }
+        });
+
+        leftDirectionButton.setText("<");
+        leftDirectionButton.setMaximumSize(new java.awt.Dimension(40, 23));
+        leftDirectionButton.setMinimumSize(new java.awt.Dimension(40, 23));
+        leftDirectionButton.setPreferredSize(new java.awt.Dimension(40, 23));
+        leftDirectionButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                leftDirectionButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout rightButtonPanelLayout = new javax.swing.GroupLayout(rightButtonPanel);
+        rightButtonPanel.setLayout(rightButtonPanelLayout);
+        rightButtonPanelLayout.setHorizontalGroup(
+            rightButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(rightButtonPanelLayout.createSequentialGroup()
+                .addGap(128, 128, 128)
+                .addComponent(upDirectionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(rightButtonPanelLayout.createSequentialGroup()
+                .addGroup(rightButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(rightButtonPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(rightButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(rightButtonPanelLayout.createSequentialGroup()
+                                .addGroup(rightButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(playerNameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(smallHitButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(mediumHitButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(largeHitButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(rightButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(smallHealButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(mediumHealButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(largeHealButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(updatePlayerNameButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(rightButtonPanelLayout.createSequentialGroup()
+                                .addGap(81, 81, 81)
+                                .addComponent(leftDirectionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(44, 44, 44)
+                                .addComponent(rightDirectionButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(rightButtonPanelLayout.createSequentialGroup()
+                        .addGap(127, 127, 127)
+                        .addComponent(downDirectionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(7, Short.MAX_VALUE))
+        );
+        rightButtonPanelLayout.setVerticalGroup(
+            rightButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(rightButtonPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(rightButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(rightButtonPanelLayout.createSequentialGroup()
+                        .addComponent(smallHealButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(mediumHealButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(largeHealButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(rightButtonPanelLayout.createSequentialGroup()
+                        .addComponent(smallHitButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(mediumHitButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(largeHitButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(40, 40, 40)
+                .addGroup(rightButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(playerNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updatePlayerNameButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(upDirectionButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(rightButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rightDirectionButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(leftDirectionButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(downDirectionButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11))
+        );
+
+        jSplitPane1.setRightComponent(rightButtonPanel);
+
+        menuFileDropdown.setText("File");
+
+        quitMenuButton.setText("Quit");
+        quitMenuButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quitMenuButtonActionPerformed(evt);
+            }
+        });
+        menuFileDropdown.add(quitMenuButton);
+
+        menuBar.add(menuFileDropdown);
+
+        menuEditDropdown.setText("Edit");
+        menuBar.add(menuEditDropdown);
+
+        setJMenuBar(menuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(jSplitPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 32, Short.MAX_VALUE)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jSplitPane1)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    // Health Button Event Handling
+    private void smallHitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smallHitButtonActionPerformed
+        damagePlayer(1);
+    }//GEN-LAST:event_smallHitButtonActionPerformed
+
+    private void mediumHitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mediumHitButtonActionPerformed
+        damagePlayer(10);
+    }//GEN-LAST:event_mediumHitButtonActionPerformed
+
+    private void largeHitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_largeHitButtonActionPerformed
+        damagePlayer(100);
+    }//GEN-LAST:event_largeHitButtonActionPerformed
+
+    private void smallHealButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smallHealButton1ActionPerformed
+        healPlayer(1);
+    }//GEN-LAST:event_smallHealButton1ActionPerformed
+
+    private void mediumHealButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mediumHealButton1ActionPerformed
+        healPlayer(10);
+    }//GEN-LAST:event_mediumHealButton1ActionPerformed
+
+    private void largeHealButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_largeHealButton1ActionPerformed
+        healPlayer(100);
+    }//GEN-LAST:event_largeHealButton1ActionPerformed
+
+    // Menu Option Handling
+    private void quitMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitMenuButtonActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_quitMenuButtonActionPerformed
+
+    // Handle Name Change Button Event
+    private void updatePlayerNameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatePlayerNameButtonActionPerformed
+        updatePlayerName();
+    }//GEN-LAST:event_updatePlayerNameButtonActionPerformed
+
+    // Handle Directional Input
+    private void leftDirectionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leftDirectionButtonActionPerformed
+        movePlayer("West");
+    }//GEN-LAST:event_leftDirectionButtonActionPerformed
+
+    private void upDirectionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upDirectionButtonActionPerformed
+        movePlayer("North");
+    }//GEN-LAST:event_upDirectionButtonActionPerformed
+
+    private void rightDirectionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rightDirectionButtonActionPerformed
+        movePlayer("East");
+    }//GEN-LAST:event_rightDirectionButtonActionPerformed
+
+    private void downDirectionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_downDirectionButtonActionPerformed
+        movePlayer("South");
+    }//GEN-LAST:event_downDirectionButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -81,6 +408,114 @@ public class Controller extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextPane adventurePane;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton downDirectionButton;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSplitPane jSplitPane1;
+    private javax.swing.JButton largeHealButton;
+    private javax.swing.JButton largeHitButton;
+    private javax.swing.JButton leftDirectionButton;
+    private javax.swing.JPanel leftTextPanel;
+    private javax.swing.JButton mediumHealButton;
+    private javax.swing.JButton mediumHitButton;
+    private javax.swing.JMenuBar menuBar;
+    private javax.swing.JMenu menuEditDropdown;
+    private javax.swing.JMenu menuFileDropdown;
+    private javax.swing.JTextField playerNameTextField;
+    private javax.swing.JMenuItem quitMenuButton;
+    private javax.swing.JPanel rightButtonPanel;
+    private javax.swing.JButton rightDirectionButton;
+    private javax.swing.JButton smallHealButton;
+    private javax.swing.JButton smallHitButton;
+    private javax.swing.JTextPane statisticsPane;
+    private javax.swing.JButton upDirectionButton;
+    private javax.swing.JButton updatePlayerNameButton;
     // End of variables declaration//GEN-END:variables
+    
+    // Setup the game and window
+    private void setupGame() {
+        // Setup new Player
+        Player player = new Player();
+        player.setupPlayer("Debug-LayoutDemo");
+        
+        updateStatistics();
+        updateAdventure();
+    }
+    
+    // Update text boxes
+    private void updateStatistics() {
+        Player player = new Player();
+        statisticsPane.setText(
+                "Name: " + player.name +
+                "\nHP: " + player.HP +
+                "\nLocation: " + player.location[0] + ", " + player.location[1]
+        );
+    }
+    
+    // TODO: Implement actual gameplay
+    private void updateAdventure() {
+        
+        // Player player = new Player(); - Replace this with world class
+        adventurePane.setText(
+                "Dummy Text for Layout Representation" +
+                "\n\n" +
+                " > Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus elementum sagittis vitae et leo duis ut diam. Gravida in fermentum et sollicitudin ac orci phasellus egestas. Varius sit amet mattis vulputate enim. Tempus urna et pharetra pharetra massa. Congue nisi vitae suscipit tellus. Tempor id eu nisl nunc mi. Id interdum velit laoreet id donec. Aenean sed adipiscing diam donec adipiscing tristique. Diam vel quam elementum pulvinar etiam non quam lacus. Eu lobortis elementum nibh tellus molestie nunc non. Pulvinar neque laoreet suspendisse interdum consectetur libero id. Ut diam quam nulla porttitor massa id neque. Mi sit amet mauris commodo quis. Ante metus dictum at tempor.\n" +
+                "\n\n" +
+                " > Arcu bibendum at varius vel pharetra vel turpis. Eleifend quam adipiscing vitae proin. Pharetra diam sit amet nisl suscipit adipiscing bibendum est. Egestas tellus rutrum tellus pellentesque eu tincidunt tortor. Gravida arcu ac tortor dignissim convallis aenean et tortor. Mi quis hendrerit dolor magna. At volutpat diam ut venenatis tellus in metus vulputate. Urna porttitor rhoncus dolor purus non enim praesent elementum. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl vel. Neque egestas congue quisque egestas diam in arcu cursus euismod. Phasellus faucibus scelerisque eleifend donec pretium. Netus et malesuada fames ac turpis egestas. Nisi porta lorem mollis aliquam ut porttitor. Suscipit adipiscing bibendum est ultricies integer quis.\n" +
+                "\n\n" +
+                " > Ut sem viverra aliquet eget. Semper viverra nam libero justo laoreet. Sapien pellentesque habitant morbi tristique senectus et netus. Blandit turpis cursus in hac habitasse platea dictumst quisque. Fames ac turpis egestas maecenas pharetra convallis posuere morbi. Risus nec feugiat in fermentum posuere urna nec tincidunt. Lacinia at quis risus sed vulputate. Consectetur purus ut faucibus pulvinar elementum integer enim. Ullamcorper eget nulla facilisi etiam dignissim diam quis enim. Quis imperdiet massa tincidunt nunc pulvinar. Neque aliquam vestibulum morbi blandit cursus risus at. Eget aliquet nibh praesent tristique. Turpis massa tincidunt dui ut ornare lectus sit amet est. Nunc consequat interdum varius sit. Nibh praesent tristique magna sit amet purus. Neque volutpat ac tincidunt vitae. In mollis nunc sed id semper risus in hendrerit.\n" +
+                "\n\n" +
+                " > Proin sagittis nisl rhoncus mattis rhoncus urna neque. Quis imperdiet massa tincidunt nunc pulvinar sapien et. Quam viverra orci sagittis eu. Egestas pretium aenean pharetra magna ac placerat vestibulum lectus mauris. Mauris in aliquam sem fringilla ut morbi tincidunt augue interdum. Cum sociis natoque penatibus et magnis dis parturient montes. Felis bibendum ut tristique et egestas quis ipsum. Eget est lorem ipsum dolor sit amet. Platea dictumst quisque sagittis purus sit amet volutpat consequat. Elit at imperdiet dui accumsan sit amet nulla. Risus ultricies tristique nulla aliquet enim. Risus nec feugiat in fermentum. Id leo in vitae turpis massa sed elementum tempus egestas. Aliquet nec ullamcorper sit amet risus nullam eget felis eget. Scelerisque eleifend donec pretium vulputate. Sit amet massa vitae tortor condimentum lacinia quis vel. Bibendum est ultricies integer quis auctor elit sed vulputate mi. Tempor orci dapibus ultrices in iaculis nunc sed augue lacus.\n" +
+                "\n\n" +
+                " > Sollicitudin aliquam ultrices sagittis orci a. In hac habitasse platea dictumst vestibulum rhoncus est pellentesque. Feugiat vivamus at augue eget arcu. Blandit massa enim nec dui nunc mattis enim. Aliquam purus sit amet luctus venenatis lectus magna. Et ultrices neque ornare aenean euismod elementum nisi. A lacus vestibulum sed arcu non odio. Vestibulum lectus mauris ultrices eros in. Tempor nec feugiat nisl pretium fusce id velit ut. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Molestie a iaculis at erat. Et leo duis ut diam quam nulla porttitor. Mus mauris vitae ultricies leo integer malesuada nunc vel risus. Nisl vel pretium lectus quam id. Sit amet consectetur adipiscing elit duis tristique sollicitudin. Rhoncus est pellentesque elit ullamcorper. Egestas egestas fringilla phasellus faucibus. Tortor posuere ac ut consequat semper viverra nam libero. Et odio pellentesque diam volutpat."
+        );
+    }
+    
+    // Update player name
+    private void updatePlayerName() {
+        Player player = new Player();
+        String newName = playerNameTextField.getText();
+        player.changeName(newName);
+        
+        updateStatistics();
+    }
+    
+    // Manage player health
+    private void healPlayer(int heal) {
+        Player player = new Player();
+        player.increaseHP(heal);
+        
+        updateStatistics();
+    }
+    
+    private void damagePlayer(int damage) {
+        Player player = new Player();
+        player.decreaseHP(damage);
+        
+        updateStatistics();
+    }
+    
+    // Update player location
+    private void movePlayer(String direction) {
+        Player player = new Player();
+        boolean success = false;
+        
+        // TODO: If/elif/elif/elif isn't great here.
+        if (direction == "North") {
+            success = player.moveNorth();
+        } else if (direction == "East") {
+            success = player.moveEast();
+        } else if (direction == "South") {
+            success = player.moveSouth();
+        } else if (direction == "West") {
+            success = player.moveWest();
+        }
+        
+        // TODO: Make something happen visually on fail, this means the player is trying to move OOB
+        //System.out.println(success);
+        
+        updateStatistics();
+    }
 }
