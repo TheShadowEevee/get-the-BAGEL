@@ -14,7 +14,7 @@ public class Player {
     
     
     // Initialize Player Class Variables
-    public void setupPlayer(String name) {
+    public Player(String name) {
         this.name = name;
         this.HP = 100;
         this.location[0] = 1; // Start on the first level
@@ -72,8 +72,8 @@ public class Player {
     public boolean roomDown() { // Moving towards negative maxTravelable
         this.location[1] -= 1;
         
-        if ( this.location[1] < 0 ) {
-            this.location[1] = 0;
+        if ( this.location[1] < 1 ) {
+            this.location[1] = 1;
             return false;
         }
         

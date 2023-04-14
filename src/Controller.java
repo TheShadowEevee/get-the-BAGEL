@@ -8,6 +8,8 @@
 
 public class Controller extends javax.swing.JFrame {
 
+    static Player Ted = null;
+    
     /**
      * Creates new form Controller
      */
@@ -436,8 +438,7 @@ public class Controller extends javax.swing.JFrame {
     // Setup the game and window
     private void setupGame() {
         // Setup new Player
-        Player player = new Player();
-        player.setupPlayer("Debug-LayoutDemo");
+        this.Ted = new Player("Debug-LayoutDemo");
         
         updateStatistics();
         updateAdventure();
@@ -445,12 +446,11 @@ public class Controller extends javax.swing.JFrame {
     
     // Update text boxes
     private void updateStatistics() {
-        Player player = new Player();
         statisticsPane.setText(
-                "Name: " + player.name +
-                "\nHP: " + player.HP +
-                "\nLevel: " + player.location[0] +
-                "\nRoom: " + player.location[1]
+                "Name: " + Ted.name +
+                "\nHP: " + Ted.HP +
+                "\nLevel: " + Ted.location[0] +
+                "\nRoom: " + Ted.location[1]
         );
     }
     
@@ -475,40 +475,37 @@ public class Controller extends javax.swing.JFrame {
     
     // Update player name
     private void updatePlayerName() {
-        Player player = new Player();
         String newName = playerNameTextField.getText();
-        player.changeName(newName);
+        Ted.changeName(newName);
         
         updateStatistics();
     }
     
     // Manage player health
     private void healPlayer(int heal) {
-        Player player = new Player();
-        player.increaseHP(heal);
+        Ted.increaseHP(heal);
         
         updateStatistics();
     }
     
     private void damagePlayer(int damage) {
-        Player player = new Player();
-        player.decreaseHP(damage);
+        Ted.decreaseHP(damage);
         
         updateStatistics();
     }
     
     // Update player location
     private void movePlayer(String direction) {
-        Player player = new Player();
+
         boolean success = false;
         
         // TODO: If/elif/elif/elif isn't great here.
         if (direction == "LevelUp") {
-            success = player.levelUp();
+            success = Ted.levelUp();
         } else if (direction == "RoomUp") {
-            success = player.roomUp();
+            success = Ted.roomUp();
         } else if (direction == "RoomDown") {
-            success = player.roomDown();
+            success = Ted.roomDown();
         }
         
         // TODO: Make something happen visually on fail, this means the player is trying to move OOB
