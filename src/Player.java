@@ -7,7 +7,7 @@ public class Player {
     
     // Define Player Variables
     public static String name;
-    public static int HP = 100;
+    public static int HP;
     public static int[] location = {0, 0}; // Intented to represent (x, y) or (column, row) on a 2D plane, starting in center
     
     private static int maxTravelable = 10; // Prevent moving to a space further than x
