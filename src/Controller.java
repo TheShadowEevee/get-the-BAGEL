@@ -450,7 +450,7 @@ public class Controller extends javax.swing.JFrame {
                 "Name: " + player.name +
                 "\nHP: " + player.HP +
                 "\nLevel: " + player.location[0] +
-                "\nRoom:" + player.location[1]
+                "\nRoom: " + player.location[1]
         );
     }
     
