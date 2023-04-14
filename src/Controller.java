@@ -356,19 +356,19 @@ public class Controller extends javax.swing.JFrame {
 
     // Handle Directional Input
     private void leftDirectionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leftDirectionButtonActionPerformed
-        movePlayer("West");
+        movePlayer("RoomDown");
     }//GEN-LAST:event_leftDirectionButtonActionPerformed
 
     private void upDirectionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upDirectionButtonActionPerformed
-        movePlayer("North");
+        movePlayer("LevelUp");
     }//GEN-LAST:event_upDirectionButtonActionPerformed
 
     private void rightDirectionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rightDirectionButtonActionPerformed
-        movePlayer("East");
+        movePlayer("RoomUp");
     }//GEN-LAST:event_rightDirectionButtonActionPerformed
 
     private void downDirectionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_downDirectionButtonActionPerformed
-        movePlayer("South");
+        //movePlayer("South");
     }//GEN-LAST:event_downDirectionButtonActionPerformed
 
     /**
@@ -449,7 +449,8 @@ public class Controller extends javax.swing.JFrame {
         statisticsPane.setText(
                 "Name: " + player.name +
                 "\nHP: " + player.HP +
-                "\nLocation: " + player.location[0] + ", " + player.location[1]
+                "\nLevel: " + player.location[0] +
+                "\nRoom:" + player.location[1]
         );
     }
     
@@ -502,14 +503,12 @@ public class Controller extends javax.swing.JFrame {
         boolean success = false;
         
         // TODO: If/elif/elif/elif isn't great here.
-        if (direction == "North") {
-            success = player.moveNorth();
-        } else if (direction == "East") {
-            success = player.moveEast();
-        } else if (direction == "South") {
-            success = player.moveSouth();
-        } else if (direction == "West") {
-            success = player.moveWest();
+        if (direction == "LevelUp") {
+            success = player.levelUp();
+        } else if (direction == "RoomUp") {
+            success = player.roomUp();
+        } else if (direction == "RoomDown") {
+            success = player.roomDown();
         }
         
         // TODO: Make something happen visually on fail, this means the player is trying to move OOB

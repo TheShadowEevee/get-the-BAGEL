@@ -8,17 +8,17 @@ public class Player {
     // Define Player Variables
     public static String name;
     public static int HP;
-    public static int[] location = {0, 0}; // Intented to represent (x, y) or (column, row) on a 2D plane, starting in center
+    public static int[] location = {0, 0}; // Level, Room
     
-    private static int maxTravelable = 10; // Prevent moving to a space further than x
+    private static int maxTravelable = 9; // Prevent moving to a space further than x
     
     
     // Initialize Player Class Variables
     public void setupPlayer(String name) {
         this.name = name;
         this.HP = 100;
-        this.location[0] = 0;
-        this.location[1] = 0;
+        this.location[0] = 1; // Start on the first level
+        this.location[1] = 1; // Start in the first room
     }
     
     
@@ -47,18 +47,7 @@ public class Player {
     
     
     // Player Location Change
-    public boolean moveNorth() { // Moving towards negative maxTravelable
-        this.location[0] -= 1;
-        
-        if ( this.location[0] < -this.maxTravelable ) {
-            this.location[0] = -this.maxTravelable;
-            return false;
-        }
-        
-        return true;
-    }
-    
-    public boolean moveSouth() { // Moving towards maxTravelable
+    public boolean levelUp() { // Moving towards negative maxTravelable
         this.location[0] += 1;
         
         if ( this.location[0] > this.maxTravelable ) {
@@ -69,22 +58,22 @@ public class Player {
         return true;
     }
     
-    public boolean moveWest() { // Moving towards negative maxTravelable
-        this.location[1] -= 1;
+    public boolean roomUp() { // Moving towards maxTravelable
+        this.location[1] += 1;
         
-        if ( this.location[1] < -this.maxTravelable ) {
-            this.location[1] = -this.maxTravelable;
+        if ( this.location[1] > this.maxTravelable ) {
+            this.location[1] = this.maxTravelable;
             return false;
         }
         
         return true;
     }
     
-    public boolean moveEast() { // Moving towards maxTravelable
-        this.location[1] += 1;
+    public boolean roomDown() { // Moving towards negative maxTravelable
+        this.location[1] -= 1;
         
-        if ( this.location[1] > this.maxTravelable ) {
-            this.location[1] = this.maxTravelable;
+        if ( this.location[1] < 0 ) {
+            this.location[1] = 0;
             return false;
         }
         
