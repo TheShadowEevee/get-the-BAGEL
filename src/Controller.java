@@ -52,8 +52,8 @@ public class Controller extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("[Bagel] - Layout Test");
-        setMinimumSize(new java.awt.Dimension(500, 300));
-        setPreferredSize(new java.awt.Dimension(500, 300));
+        setMinimumSize(new java.awt.Dimension(600, 400));
+        setPreferredSize(new java.awt.Dimension(600, 400));
 
         leftTextPanel.setMinimumSize(new java.awt.Dimension(200, 277));
         leftTextPanel.setPreferredSize(new java.awt.Dimension(200, 277));
@@ -94,14 +94,13 @@ public class Controller extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(9, Short.MAX_VALUE))
+                .addContainerGap(209, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(leftTextPanel);
 
-        rightButtonPanel.setMinimumSize(new java.awt.Dimension(150, 277));
+        rightButtonPanel.setMinimumSize(new java.awt.Dimension(300, 277));
         rightButtonPanel.setOpaque(false);
-        rightButtonPanel.setPreferredSize(new java.awt.Dimension(150, 277));
 
         smallHitButton.setText("Small Hit (-1)");
         smallHitButton.setToolTipText("");
@@ -253,7 +252,7 @@ public class Controller extends javax.swing.JFrame {
                     .addGroup(rightButtonPanelLayout.createSequentialGroup()
                         .addGap(127, 127, 127)
                         .addComponent(downDirectionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addContainerGap(207, Short.MAX_VALUE))
         );
         rightButtonPanelLayout.setVerticalGroup(
             rightButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
