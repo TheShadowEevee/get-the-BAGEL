@@ -8,6 +8,8 @@
 
 public class Controller extends javax.swing.JFrame {
 
+    static Player Ted = null;
+    
     /**
      * Creates new form Controller
      */
@@ -52,8 +54,8 @@ public class Controller extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("[Bagel] - Layout Test");
-        setMinimumSize(new java.awt.Dimension(500, 300));
-        setPreferredSize(new java.awt.Dimension(500, 300));
+        setMinimumSize(new java.awt.Dimension(600, 400));
+        setPreferredSize(new java.awt.Dimension(600, 400));
 
         leftTextPanel.setMinimumSize(new java.awt.Dimension(200, 277));
         leftTextPanel.setPreferredSize(new java.awt.Dimension(200, 277));
@@ -94,14 +96,13 @@ public class Controller extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(9, Short.MAX_VALUE))
+                .addContainerGap(209, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(leftTextPanel);
 
-        rightButtonPanel.setMinimumSize(new java.awt.Dimension(150, 277));
+        rightButtonPanel.setMinimumSize(new java.awt.Dimension(300, 277));
         rightButtonPanel.setOpaque(false);
-        rightButtonPanel.setPreferredSize(new java.awt.Dimension(150, 277));
 
         smallHitButton.setText("Small Hit (-1)");
         smallHitButton.setToolTipText("");
@@ -253,7 +254,7 @@ public class Controller extends javax.swing.JFrame {
                     .addGroup(rightButtonPanelLayout.createSequentialGroup()
                         .addGap(127, 127, 127)
                         .addComponent(downDirectionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addContainerGap(207, Short.MAX_VALUE))
         );
         rightButtonPanelLayout.setVerticalGroup(
             rightButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -357,19 +358,19 @@ public class Controller extends javax.swing.JFrame {
 
     // Handle Directional Input
     private void leftDirectionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leftDirectionButtonActionPerformed
-        movePlayer("West");
+        movePlayer("RoomDown");
     }//GEN-LAST:event_leftDirectionButtonActionPerformed
 
     private void upDirectionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upDirectionButtonActionPerformed
-        movePlayer("North");
+        movePlayer("LevelUp");
     }//GEN-LAST:event_upDirectionButtonActionPerformed
 
     private void rightDirectionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rightDirectionButtonActionPerformed
-        movePlayer("East");
+        movePlayer("RoomUp");
     }//GEN-LAST:event_rightDirectionButtonActionPerformed
 
     private void downDirectionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_downDirectionButtonActionPerformed
-        movePlayer("South");
+        //movePlayer("South");
     }//GEN-LAST:event_downDirectionButtonActionPerformed
 
     /**
@@ -437,8 +438,7 @@ public class Controller extends javax.swing.JFrame {
     // Setup the game and window
     private void setupGame() {
         // Setup new Player
-        Player player = new Player();
-        player.setupPlayer("Debug-LayoutDemo");
+        this.Ted = new Player("Debug-LayoutDemo");
         
         updateStatistics();
         updateAdventure();
@@ -446,11 +446,11 @@ public class Controller extends javax.swing.JFrame {
     
     // Update text boxes
     private void updateStatistics() {
-        Player player = new Player();
         statisticsPane.setText(
-                "Name: " + player.name +
-                "\nHP: " + player.HP +
-                "\nLocation: " + player.location[0] + ", " + player.location[1]
+                "Name: " + Ted.name +
+                "\nHP: " + Ted.HP +
+                "\nLevel: " + Ted.location[0] +
+                "\nRoom: " + Ted.location[1]
         );
     }
     
@@ -475,42 +475,37 @@ public class Controller extends javax.swing.JFrame {
     
     // Update player name
     private void updatePlayerName() {
-        Player player = new Player();
         String newName = playerNameTextField.getText();
-        player.changeName(newName);
+        Ted.changeName(newName);
         
         updateStatistics();
     }
     
     // Manage player health
     private void healPlayer(int heal) {
-        Player player = new Player();
-        player.increaseHP(heal);
+        Ted.increaseHP(heal);
         
         updateStatistics();
     }
     
     private void damagePlayer(int damage) {
-        Player player = new Player();
-        player.decreaseHP(damage);
+        Ted.decreaseHP(damage);
         
         updateStatistics();
     }
     
     // Update player location
     private void movePlayer(String direction) {
-        Player player = new Player();
+
         boolean success = false;
         
         // TODO: If/elif/elif/elif isn't great here.
-        if (direction == "North") {
-            success = player.moveNorth();
-        } else if (direction == "East") {
-            success = player.moveEast();
-        } else if (direction == "South") {
-            success = player.moveSouth();
-        } else if (direction == "West") {
-            success = player.moveWest();
+        if (direction == "LevelUp") {
+            success = Ted.levelUp();
+        } else if (direction == "RoomUp") {
+            success = Ted.roomUp();
+        } else if (direction == "RoomDown") {
+            success = Ted.roomDown();
         }
         
         // TODO: Make something happen visually on fail, this means the player is trying to move OOB
