@@ -9,6 +9,7 @@ public class Player {
     public static String name;
     public static int HP;
     public static int[] location = {0, 0}; // Level, Room
+    public static int facing;
     
     private static int maxTravelable = 9; // Prevent moving to a space further than x
     
@@ -19,6 +20,7 @@ public class Player {
         this.HP = 100;
         this.location[0] = 1; // Start on the first level
         this.location[1] = 1; // Start in the first room
+        this.facing = 0;
     }
     
     
@@ -78,6 +80,14 @@ public class Player {
         }
         
         return true;
+    }
+    
+    public void changeFacing(int newDirection) {
+        if (newDirection < 0 || newDirection > 4) {
+            return;
+        }
+        
+        this.facing = newDirection;
     }
     
 }
