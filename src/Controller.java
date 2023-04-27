@@ -1,6 +1,6 @@
 /**
  *  Copyright (c) 2023 Michael Malloy, Enter-Name
- *  CNIT 25501 Final Project - 
+ *  CNIT 25501 Final Project - GET THE bagel
  */
 
 // TODO: Replace Boilerplate
@@ -39,7 +39,7 @@ public class Controller extends javax.swing.JFrame {
         statisticsPane = new javax.swing.JTextPane();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        InputSubmitButton = new javax.swing.JButton();
         jTextField3 = new javax.swing.JTextField();
         menuBar = new javax.swing.JMenuBar();
         menuFileDropdown = new javax.swing.JMenu();
@@ -53,7 +53,6 @@ public class Controller extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("[Bagel] - Development Build");
         setMinimumSize(new java.awt.Dimension(600, 400));
-        setPreferredSize(new java.awt.Dimension(600, 400));
         setResizable(false);
 
         leftTextPanel.setMinimumSize(new java.awt.Dimension(200, 277));
@@ -109,7 +108,12 @@ public class Controller extends javax.swing.JFrame {
 
         jTextField2.setToolTipText("");
 
-        jButton1.setText("Submit");
+        InputSubmitButton.setText("Submit");
+        InputSubmitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                InputSubmitButtonActionPerformed(evt);
+            }
+        });
 
         jTextField3.setEditable(false);
         jTextField3.setText("DEVELOPMENT BUILD - Gameplay not final");
@@ -133,7 +137,7 @@ public class Controller extends javax.swing.JFrame {
                             .addGroup(rightButtonPanelLayout.createSequentialGroup()
                                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton1))
+                                .addComponent(InputSubmitButton))
                             .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 23, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -148,7 +152,7 @@ public class Controller extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(rightButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(InputSubmitButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
                 .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -200,6 +204,10 @@ public class Controller extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
 
+    private void InputSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InputSubmitButtonActionPerformed
+        processPlayerCommand();
+    }//GEN-LAST:event_InputSubmitButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -236,9 +244,9 @@ public class Controller extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton InputSubmitButton;
     private javax.swing.JTextPane adventurePane;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -256,15 +264,21 @@ public class Controller extends javax.swing.JFrame {
     private javax.swing.JTextPane statisticsPane;
     // End of variables declaration//GEN-END:variables
     
+    String adventureContextHead = null;
+    
     // Setup the game and window
     private void setupGame() {
         // Setup new Player
-        this.Ted = new Player("Debug-LayoutDemo");
-        PuzzleScreen puzzle = new PuzzleScreen();
+        this.Ted = new Player("Ted Bagelson");
+        //PuzzleScreen puzzle = new PuzzleScreen();
+        
+        adventureContextHead = 
+                "You have woken up in a strange house. Looking around, your surroundings seem familiar yet foreign.\n" +
+                "Standing up, your stomach growls. It's time for breakfast. There must be a bagel somewhere in this house you can eat.";
         
         updateStatistics();
         updateAdventure();
-        puzzle.puzzleScreen();
+        //puzzle.puzzleScreen();
     }
     
     // Update text boxes
@@ -272,8 +286,7 @@ public class Controller extends javax.swing.JFrame {
         statisticsPane.setText(
                 "Name: " + Ted.name +
                 "\nHP: " + Ted.HP +
-                "\nLevel: " + Ted.location[0] +
-                "\nRoom: " + Ted.location[1]
+                "\nFloor " + Ted.location[0] + ", Room " + Ted.location[1]
         );
     }
     
@@ -281,12 +294,25 @@ public class Controller extends javax.swing.JFrame {
     private void updateAdventure() {
         
         // Player player = new Player(); - Replace this with world class
+        
         adventurePane.setText(
-                "You wake up in a house, there is one door, one staircase down, and one staircase up.​"
-                + "\n What would you like to do?"
+                this.adventureContextHead + "\n\n" +
+                "There is a door to the East, a staircase going down to the South, and a staircase going up to the North.\n\n" +
+                "What would you like to do?"
         );
     }
     
+    private void processPlayerCommand() {
+        // This function here if the plan is to commit to text entry
+        
+        // Move
+        // InitPuzzle / Check?
+        // Use (Stairs)
+        // Open (Door)
+    }
+    
+    // These functions are mostly used if the plan is to commit to button entry
+    /*
     // Update player name
     private void updatePlayerName() {
         String newName = playerNameTextField.getText();
@@ -327,4 +353,6 @@ public class Controller extends javax.swing.JFrame {
         
         updateStatistics();
     }
+
+    */
 }
