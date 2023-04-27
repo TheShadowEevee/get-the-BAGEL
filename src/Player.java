@@ -49,45 +49,9 @@ public class Player {
     
     
     // Player Location Change
-    public boolean levelUp() { // Moving towards negative maxTravelable
-        this.location[0] += 1;
-        
-        if ( this.location[0] > this.maxTravelable ) {
-            this.location[0] = this.maxTravelable;
-            return false;
-        }
-        
-        return true;
-    }
-    
-    public boolean roomUp() { // Moving towards maxTravelable
-        this.location[1] += 1;
-        
-        if ( this.location[1] > this.maxTravelable ) {
-            this.location[1] = this.maxTravelable;
-            return false;
-        }
-        
-        return true;
-    }
-    
-    public boolean roomDown() { // Moving towards negative maxTravelable
-        this.location[1] -= 1;
-        
-        if ( this.location[1] < 1 ) {
-            this.location[1] = 1;
-            return false;
-        }
-        
-        return true;
-    }
-    
-    public void changeFacing(int newDirection) {
-        if (newDirection < 0 || newDirection > 4) {
-            return;
-        }
-        
-        this.facing = newDirection;
+    public void changeRoom(int[] room) {
+        this.location[0] = room[0];
+        this.location[1] = room[1];
     }
     
 }
