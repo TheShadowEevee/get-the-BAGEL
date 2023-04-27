@@ -3,9 +3,6 @@
  *  CNIT 25501 Final Project - GET THE bagel
  */
 
-// TODO: Replace Boilerplate
-// TODO: Disable spell-checking my name :/ (-MM)
-
 public class Controller extends javax.swing.JFrame {
 
     static Player Ted = null;
