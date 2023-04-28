@@ -1,9 +1,9 @@
-import PuzzleScreen.Status;
-import javax.swing.JOptionPane;
 /**
  *  Copyright (c) 2023 Michael Malloy, Enter-Name
  *  CNIT 25501 Final Project - GET THE bagel
  */
+
+import javax.swing.JOptionPane;
 
 public class Controller extends javax.swing.JFrame {
 
@@ -380,7 +380,7 @@ public class Controller extends javax.swing.JFrame {
             Ted.changeRoom(CurrentRoom.currentDoors[direction]);
             CurrentRoom.updateRoom(CurrentRoom.currentDoors[direction]);
         } else {
-            if (CurrentRoom.isLocked) {
+            if (CurrentRoom.isLocked && CurrentRoom.doorNullTest(direction)) {
                 JOptionPane.showMessageDialog(this, "The doors and starcases in this room are locked!\nPlease check the podium in the room to continue.", "Warning", JOptionPane.WARNING_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(this, "There is no movement option in this direction.", "Warning", JOptionPane.WARNING_MESSAGE);
