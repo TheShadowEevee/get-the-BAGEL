@@ -16,6 +16,7 @@ public class PuzzleScreen extends javax.swing.JFrame {
         Correct,
         Incorrect,
         Skipped,
+        OutOfHealth,
         WinCon
     }
     
@@ -243,6 +244,10 @@ public class PuzzleScreen extends javax.swing.JFrame {
         
         JOptionPane.showMessageDialog(this, "Incorrect!", "Incorrect", JOptionPane.WARNING_MESSAGE);
         
+        if (Ted.HP <= 0) {
+            finishPuzzle(Status.OutOfHealth);
+        }
+        
         if (incorrectAnswers >= 3) {
             finishPuzzle(Status.Incorrect);
         }
@@ -250,6 +255,11 @@ public class PuzzleScreen extends javax.swing.JFrame {
     
     private void skipPuzzle() {
         Ted.decreaseHP(30);
+        
+        if (Ted.HP <= 0) {
+            finishPuzzle(Status.OutOfHealth);
+        }
+        
         finishPuzzle(Status.Skipped);
     }
     
@@ -265,6 +275,10 @@ public class PuzzleScreen extends javax.swing.JFrame {
             case Skipped:
                 JOptionPane.showMessageDialog(this, "Skipped!", "Skipped", JOptionPane.WARNING_MESSAGE);
                 break;
+            case OutOfHealth:
+                JOptionPane.showMessageDialog(this, "You have run out of health! Restart the game to try again.", "Game Over", JOptionPane.ERROR_MESSAGE);
+                dispose();
+                System.exit(0);
             case WinCon:
                 JOptionPane.showMessageDialog(this, "You Win! Restart the game to play again!", "Winner Winner Bagel Dinner", JOptionPane.INFORMATION_MESSAGE);
                 break;
