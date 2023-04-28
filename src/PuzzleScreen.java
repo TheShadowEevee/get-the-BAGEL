@@ -281,7 +281,8 @@ public class PuzzleScreen extends javax.swing.JFrame {
                 System.exit(0);
             case WinCon:
                 JOptionPane.showMessageDialog(this, "You Win! Restart the game to play again!", "Winner Winner Bagel Dinner", JOptionPane.INFORMATION_MESSAGE);
-                break;
+                dispose();
+                System.exit(0);
         }
         
         CurrentRoom.isLocked = false;
