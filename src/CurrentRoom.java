@@ -22,24 +22,103 @@ public class CurrentRoom {
         String strAddress = address[0] + "," + address[1];
         switch (strAddress) {
             case "0,0":
-                currentDescription = "";
-                int[][] Doors = {{1,0},{0,1},{-1,-1},{-1,-1}};
+                currentDescription = "In this brightly lit part of the basement covered in torches, there is a staircase going up in the North, a door going to the East, and a podium in the middle.";
+                currentDoors[0][0] = 1;
+                currentDoors[0][1] = 0;
+                currentDoors[1][0] = 0;
+                currentDoors[1][1] = 1;
+                currentDoors[2][0] = -1;
+                currentDoors[2][1] = -1;
+                currentDoors[3][0] = -1;
+                currentDoors[3][1] = -1;
                 break;
             case "0,1":
+                currentDescription = "The basement is darker here than expected and is covered in cobwebs, there is a staircase going up in the North, a door the East, a door to the West, and a podium in the middle.";
+                currentDoors[0][0] = 1;
+                currentDoors[0][1] = 1;
+                currentDoors[1][0] = 0;
+                currentDoors[1][1] = 2;
+                currentDoors[2][0] = -1;
+                currentDoors[2][1] = -1;
+                currentDoors[3][0] = 0;
+                currentDoors[3][1] = 0;
                 break;
             case "0,2":
+                currentDescription = "You have found the end of the basement, this room is made of worn down and cracked stone, but is plesantly lit seemingly from nowhere, there is only the door to the West you entered from and a podium in the middle.";
+                currentDoors[0][0] = -1;
+                currentDoors[0][1] = -1;
+                currentDoors[1][0] = -1;
+                currentDoors[1][1] = -1;
+                currentDoors[2][0] = -1;
+                currentDoors[2][1] = -1;
+                currentDoors[3][0] = 0;
+                currentDoors[3][1] = 1;
                 break;
             case "1,0":
+                currentDescription = "In this sterial white room, that you swear you have seen before, you see a staircase going up in the North, a door to the East, a staircase going down in the South, and new podium in the middle that you didn't see the first time.";
+                currentDoors[0][0] = 2;
+                currentDoors[0][1] = 0;
+                currentDoors[1][0] = 1;
+                currentDoors[1][1] = 1;
+                currentDoors[2][0] = 0;
+                currentDoors[2][1] = 0;
+                currentDoors[3][0] = -1;
+                currentDoors[3][1] = -1;
                 break;
             case "1,1":
+                currentDescription = "This room is chaos incarnate, books lay open everywhere, candy is floating around, and everything seems to be rotating around the center, this seems like the middle of the house. There is a door to the East, a staircase going down to the South, a door to the West, and a podium in the middle.";
+                currentDoors[0][0] = -1;
+                currentDoors[0][1] = -1;
+                currentDoors[1][0] = 1;
+                currentDoors[1][1] = 2;
+                currentDoors[2][0] = 0;
+                currentDoors[2][1] = 1;
+                currentDoors[3][0] = 1;
+                currentDoors[3][1] = 0;
                 break;
             case "1,2":
+                currentDescription = "the pungent smell of chlorine hits you first as you look out at a indoor pool, there is a staircase going up in the North, a door to the West, and a podium floating in the middle of the pool.";
+                currentDoors[0][0] = 2;
+                currentDoors[0][1] = 2;
+                currentDoors[1][0] = -1;
+                currentDoors[1][1] = -1;
+                currentDoors[2][0] = -1;
+                currentDoors[2][1] = -1;
+                currentDoors[3][0] = 1;
+                currentDoors[3][1] = 1;
                 break;
             case "2,0":
+                currentDescription = "Birds fly around you as you stand in the middle of a room-sized bird cage, there is a door to the East, a staircase to the South, and a podium in the middle.";
+                currentDoors[0][0] = -1;
+                currentDoors[0][1] = -1;
+                currentDoors[1][0] = 2;
+                currentDoors[1][1] = 1;
+                currentDoors[2][0] = 1;
+                currentDoors[2][1] = 0;
+                currentDoors[3][0] = -1;
+                currentDoors[3][1] = -1;
                 break;
             case "2,1":
+                currentDescription = "Atop a bananna tree you see a door to your East and West, with a podium in the middle.";
+                currentDoors[0][0] = -1;
+                currentDoors[0][1] = -1;
+                currentDoors[1][0] = 2;
+                currentDoors[1][1] = 2;
+                currentDoors[2][0] = -1;
+                currentDoors[2][1] = -1;
+                currentDoors[3][0] = 2;
+                currentDoors[3][1] = 0;
                 break;
             case "2,2":
+                currentDescription = "In an evil scientist's evil lab with a bored platypus waring a fashionable hat chained to a wall, you see a staircase to the South, a door to the West, and a podium in the middle.";
+                currentDoors[0][0] = -1;
+                currentDoors[0][1] = -1;
+                currentDoors[1][0] = -1;
+                currentDoors[1][1] = -1;
+                currentDoors[2][0] = 1;
+                currentDoors[2][1] = 2;
+                currentDoors[3][0] = 2;
+                currentDoors[3][1] = 1;
                 break;
             default:
                 System.out.println("RoomOutOfBoundsError: Player tried to move out of bounds, check doors");
