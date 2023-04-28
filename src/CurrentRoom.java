@@ -152,14 +152,9 @@ public class CurrentRoom {
      * @return true = there is a door there; false = there is no door there
      */
     static boolean doorNullTest(int direction){
-        System.out.println("doorNullTest started");
-
         if(currentDoors[direction][0] != -1) {
-            System.out.println("doorNullTest passed true");
             return true;
         }
-
-        System.out.println("doorNullTest passed false");
         return false;
     }
 }
