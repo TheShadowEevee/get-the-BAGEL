@@ -55,7 +55,7 @@ public class PuzzleScreen extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("[Bagel] - Development Build");
         setAlwaysOnTop(true);
-        setMinimumSize(new java.awt.Dimension(400, 200));
+        setMinimumSize(new java.awt.Dimension(600, 600));
         setPreferredSize(new java.awt.Dimension(400, 200));
 
         jSplitPane2.setDividerLocation(200);
@@ -63,7 +63,7 @@ public class PuzzleScreen extends javax.swing.JFrame {
 
         puzzleDisplay.setText("Here be Riddles");
         puzzleDisplay.setEnabled(false);
-        puzzleDisplay.setMinimumSize(new java.awt.Dimension(62, 300));
+        puzzleDisplay.setMinimumSize(new java.awt.Dimension(300, 300));
         puzzleDisplay.setName(""); // NOI18N
         puzzleDisplay.setRequestFocusEnabled(false);
         jScrollPane3.setViewportView(puzzleDisplay);
@@ -92,7 +92,7 @@ public class PuzzleScreen extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(119, Short.MAX_VALUE)
+                .addContainerGap(55, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(AnswerBox, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -148,7 +148,7 @@ public class PuzzleScreen extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
+            .addComponent(jSplitPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
         );
 
         pack();
