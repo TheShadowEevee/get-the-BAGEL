@@ -1,7 +1,5 @@
 import java.util.Random;
 
-import org.w3c.dom.ranges.Range;
-
 public class Puzzle {
     private static Random r = new Random();
     private static String answer = "";
