@@ -109,6 +109,7 @@ public class Puzzle {
      * @return true = attempt is correct; false attempt is wrong
      */
     public static boolean checkAttempt(String attempt) {
+        System.out.println(answer);
         if(attempt.equals(answer)){
             return true;
         }

@@ -314,7 +314,7 @@ public class Controller extends javax.swing.JFrame {
     private void setupGame() {
         // Setup new Player
         this.Ted = new Player("Ted Bagelson");
-        //PuzzleScreen puzzle = new PuzzleScreen();
+        PuzzleScreen puzzle = new PuzzleScreen(Ted);
         
         adventureContextHead = 
                 "You have woken up in a strange house. Looking around, your surroundings seem familiar yet foreign.\n" +
@@ -322,7 +322,7 @@ public class Controller extends javax.swing.JFrame {
         
         updateStatistics();
         updateAdventure();
-        //puzzle.puzzleScreen();
+        puzzle.puzzleScreen(Ted);
     }
     
     // Update text boxes
