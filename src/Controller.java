@@ -380,8 +380,11 @@ public class Controller extends javax.swing.JFrame {
             Ted.changeRoom(CurrentRoom.currentDoors[direction]);
             CurrentRoom.updateRoom(CurrentRoom.currentDoors[direction]);
         } else {
-            // TODO: Make something happen visually on fail, this means the player is trying to move OOB
-            //System.out.println(success);
+            if (CurrentRoom.isLocked) {
+                JOptionPane.showMessageDialog(this, "The doors and starcases in this room are locked!\nPlease check the podium in the room to continue.", "Warning", JOptionPane.WARNING_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "There is no movement option in this direction.", "Warning", JOptionPane.WARNING_MESSAGE);
+            }
         }
         
         updateStatistics();
