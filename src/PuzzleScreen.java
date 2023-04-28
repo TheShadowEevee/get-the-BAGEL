@@ -42,6 +42,7 @@ public class PuzzleScreen extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         AnswerBox = new javax.swing.JTextField();
         SubmitAnswerButton = new javax.swing.JButton();
+        SkipButton = new javax.swing.JButton();
         menuBar = new javax.swing.JMenuBar();
         menuFileDropdown = new javax.swing.JMenu();
         quitMenuButton = new javax.swing.JMenuItem();
@@ -68,10 +69,17 @@ public class PuzzleScreen extends javax.swing.JFrame {
         jTextField2.setEditable(false);
         jTextField2.setText("Input");
 
-        SubmitAnswerButton.setText("jButton1");
+        SubmitAnswerButton.setText("Submit");
         SubmitAnswerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SubmitAnswerButtonActionPerformed(evt);
+            }
+        });
+
+        SkipButton.setText("Skip (-30 HP)");
+        SkipButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SkipButtonActionPerformed(evt);
             }
         });
 
@@ -87,10 +95,13 @@ public class PuzzleScreen extends javax.swing.JFrame {
                         .addGap(101, 101, 101))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(188, 188, 188))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(SubmitAnswerButton)
                         .addGap(188, 188, 188))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(144, 144, 144)
+                .addComponent(SubmitAnswerButton)
+                .addGap(29, 29, 29)
+                .addComponent(SkipButton)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -100,7 +111,9 @@ public class PuzzleScreen extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(AnswerBox, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(SubmitAnswerButton)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SubmitAnswerButton)
+                    .addComponent(SkipButton))
                 .addContainerGap(51, Short.MAX_VALUE))
         );
 
@@ -146,6 +159,10 @@ public class PuzzleScreen extends javax.swing.JFrame {
         checkAnswer();
     }//GEN-LAST:event_SubmitAnswerButtonActionPerformed
 
+    private void SkipButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SkipButtonActionPerformed
+        skipPuzzle();
+    }//GEN-LAST:event_SkipButtonActionPerformed
+
     public static void puzzleScreen(Player TedRose) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -180,6 +197,7 @@ public class PuzzleScreen extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AnswerBox;
+    private javax.swing.JButton SkipButton;
     private javax.swing.JButton SubmitAnswerButton;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JPanel jPanel1;
@@ -231,14 +249,13 @@ public class PuzzleScreen extends javax.swing.JFrame {
     private void skipPuzzle() {
         Ted.decreaseHP(30);
         finishPuzzle(Status.Skipped);
-        
     }
     
     private void finishPuzzle(Status result) {
         if (result == Status.Correct) {
-            System.out.println("Yay");
+            //Code
         } else if (result == Status.Incorrect) {
-            System.out.println("Aw");
+            // Code
         } else if (result == Status.Skipped) {
             // Code
         }
