@@ -1,3 +1,8 @@
+/**
+ *  Copyright (c) 2023 Michael Malloy, Enter-Name
+ *  CNIT 25501 Final Project - GET THE bagel
+ */
+
 import java.util.Random;
 
 public class Puzzle {

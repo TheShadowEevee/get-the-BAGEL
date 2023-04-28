@@ -1,3 +1,8 @@
+/**
+ *  Copyright (c) 2023 Michael Malloy, Enter-Name
+ *  CNIT 25501 Final Project - GET THE bagel
+ */
+
 public class CurrentRoom {
     /**
      * doors: this is an array of int arrays, these arrays should be the addresses of the room on the OTHER side
