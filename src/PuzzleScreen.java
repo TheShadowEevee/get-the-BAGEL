@@ -231,8 +231,8 @@ public class PuzzleScreen extends javax.swing.JFrame {
     private void checkAnswer() {
         if (puzzle.checkAttempt(AnswerBox.getText())) {
             correctAnswer();
-        } else{
-        incorrectAnswer();
+        } else {
+            incorrectAnswer();
         }
     }
     
