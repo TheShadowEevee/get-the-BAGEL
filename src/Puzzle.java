@@ -109,7 +109,9 @@ public class Puzzle {
      * @return true = attempt is correct; false attempt is wrong
      */
     public static boolean checkAttempt(String attempt) {
-        if(attempt == answer) return true;
+        if(attempt == answer){
+            return true;
+        }
         return false;
     }
 }
