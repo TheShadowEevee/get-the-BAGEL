@@ -8,6 +8,10 @@ public class Puzzle {
     static boolean isBagel = false;
     static String puzzleText;
 
+    /**
+     * newPuzzle randomly chooses a puzzle from math, riddle, or bagel, with a 45/45/10 split
+     * then randomly chooses what math or riddle puzzle to give
+     */
     public static void newPuzzle() {
         int randomInt = r.nextInt(100) + 1;
 
@@ -37,7 +41,7 @@ public class Puzzle {
                     answer = String.valueOf(intAnswer);
                     puzzleText = a + " * " + b + " = ?";
                     break;
-                case 4: //^
+                case 3: //^
                     intAnswer = a;
                     for(int i = 0; i < b; i++){
                         intAnswer *= a;
@@ -97,5 +101,15 @@ public class Puzzle {
                     break;
             }
         }
+    }
+
+    /**
+     * checkAttempt checks attempt against the answer
+     * @param attempt = this is the latest attempt by the player
+     * @return true = attempt is correct; false attempt is wrong
+     */
+    public static boolean checkAttempt(String attempt) {
+        if(attempt == answer) return true;
+        return false;
     }
 }
