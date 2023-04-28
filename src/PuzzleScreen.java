@@ -3,12 +3,15 @@
  *  CNIT 25501 Final Project - GET THE bagel
  */
 
-// TODO: Replace Boilerplate
-// TODO: Disable spell-checking my name :/ (-MM)
-
 public class PuzzleScreen extends javax.swing.JFrame {
-
-    static Player Ted = null;
+    
+    private static int incorrectAnswers;
+    
+    enum Status {
+        Correct,
+        Incorrect,
+        Skipped
+    }
     
     /**
      * Creates new form Controller
@@ -167,5 +170,39 @@ public class PuzzleScreen extends javax.swing.JFrame {
     private javax.swing.JMenuItem quitMenuButton;
     // End of variables declaration//GEN-END:variables
     
-
+    private void startPuzzle(String puzzle) {
+        // Code Here
+        this.incorrectAnswers = 0;
+    }
+    
+    private void correctAnswer(Player Ted) {
+        Ted.increaseHP(15);
+        finishPuzzle(Status.Correct);
+    }
+    
+    private void incorrectAnswer(Player Ted) {
+        Ted.decreaseHP(10);
+        this.incorrectAnswers += 1;
+        
+        if (incorrectAnswers >= 3) {
+            finishPuzzle(Status.Incorrect);
+        }
+    }
+    
+    private void skipPuzzle(Player Ted) {
+        Ted.decreaseHP(30);
+        finishPuzzle(Status.Skipped);
+        
+    }
+    
+    private void finishPuzzle(Status result) {
+        if (result == Status.Correct) {
+            // Code
+        } else if (result == Status.Incorrect) {
+            // Code
+        } else if (result == Status.Skipped) {
+            // Code
+        }
+    }
+    
 }
