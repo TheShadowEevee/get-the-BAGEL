@@ -6,7 +6,6 @@
 public class Controller extends javax.swing.JFrame {
 
     static Player Ted = null;
-    static CurrentRoom Room = null;
     
     /**
      * Creates new form Controller
@@ -306,7 +305,6 @@ public class Controller extends javax.swing.JFrame {
     private void setupGame() {
         // Setup new Player
         this.Ted = new Player("Ted Bagelson");
-        this.Room = new CurrentRoom();
         //PuzzleScreen puzzle = new PuzzleScreen();
         
         adventureContextHead = 
@@ -363,10 +361,10 @@ public class Controller extends javax.swing.JFrame {
     }
     
     // Update player location
-    private void movePlayer(String direction) {
+    private void movePlayer(int direction) {
 
-        if (Room.doorNullTest) {
-            //MOVETOTHEDOORDANGIT()
+        if (CurrentRoom.doorNullTest(direction)) {
+            CurrentRoom.updateRoom(CurrentRoom.currentDoors[direction]);
         } else {
             // TODO: Make something happen visually on fail, this means the player is trying to move OOB
             //System.out.println(success);
