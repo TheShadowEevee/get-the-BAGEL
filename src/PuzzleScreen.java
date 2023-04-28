@@ -43,10 +43,11 @@ public class PuzzleScreen extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         puzzleDisplay = new javax.swing.JTextPane();
         jPanel1 = new javax.swing.JPanel();
-        jTextField2 = new javax.swing.JTextField();
         AnswerBox = new javax.swing.JTextField();
         SubmitAnswerButton = new javax.swing.JButton();
         SkipButton = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        inputHeader = new javax.swing.JTextPane();
         menuBar = new javax.swing.JMenuBar();
         menuFileDropdown = new javax.swing.JMenu();
         quitMenuButton = new javax.swing.JMenuItem();
@@ -70,9 +71,6 @@ public class PuzzleScreen extends javax.swing.JFrame {
 
         jSplitPane2.setTopComponent(jScrollPane3);
 
-        jTextField2.setEditable(false);
-        jTextField2.setText("Input");
-
         SubmitAnswerButton.setText("Submit");
         SubmitAnswerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,27 +85,37 @@ public class PuzzleScreen extends javax.swing.JFrame {
             }
         });
 
+        inputHeader.setEditable(false);
+        inputHeader.setText("Input");
+        inputHeader.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        inputHeader.setFocusable(false);
+        jScrollPane1.setViewportView(inputHeader);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(166, 166, 166)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(AnswerBox, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(SubmitAnswerButton)
-                        .addGap(29, 29, 29)
-                        .addComponent(SkipButton)))
+                        .addGap(166, 166, 166)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(AnswerBox, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(SubmitAnswerButton)
+                                .addGap(29, 29, 29)
+                                .addComponent(SkipButton))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(254, 254, 254)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(180, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(50, 50, 50)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(AnswerBox, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -199,10 +207,11 @@ public class PuzzleScreen extends javax.swing.JFrame {
     private javax.swing.JButton SkipButton;
     private javax.swing.JButton SubmitAnswerButton;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JTextPane inputHeader;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSplitPane jSplitPane2;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenu menuEditDropdown;
     private javax.swing.JMenu menuFileDropdown;
