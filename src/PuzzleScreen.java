@@ -227,6 +227,11 @@ public class PuzzleScreen extends javax.swing.JFrame {
         puzzleDisplay.setText(puzzle.puzzleText);
         
         this.incorrectAnswers = 0;
+        
+        if (puzzle.isBagel) {
+            finishPuzzle(Status.WinCon);
+        }
+        
     }
     
     private void checkAnswer() {
@@ -284,7 +289,7 @@ public class PuzzleScreen extends javax.swing.JFrame {
                 dispose();
                 System.exit(0);
             case WinCon:
-                JOptionPane.showMessageDialog(this, "You Win! Restart the game to play again!", "Winner Winner Bagel Dinner", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this, "You found the Bagel! Restart the game to play again!", "Winner Winner Bagel Dinner", JOptionPane.INFORMATION_MESSAGE);
                 dispose();
                 System.exit(0);
         }
