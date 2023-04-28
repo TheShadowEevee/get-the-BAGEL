@@ -378,5 +378,6 @@ public class Controller extends javax.swing.JFrame {
         }
         
         updateStatistics();
+        updateAdventure();
     }
 }
