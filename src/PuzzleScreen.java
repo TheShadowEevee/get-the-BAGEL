@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /**
  *  Copyright (c) 2023 Michael Malloy, Enter-Name
  *  CNIT 25501 Final Project - GET THE bagel
@@ -219,7 +222,7 @@ public class PuzzleScreen extends javax.swing.JFrame {
         puzzleDisplay.setText(puzzle.puzzleText);
         
         if (puzzle.isBagel) {
-            // Win Code
+            JOptionPane.showMessageDialog(null, "You Win! Restart the game to play again!", "Winner Winner Bagel Dinner", JOptionPane.PLAIN_MESSAGE);
         }
         
         this.incorrectAnswers = 0;
@@ -241,6 +244,8 @@ public class PuzzleScreen extends javax.swing.JFrame {
         Ted.decreaseHP(10);
         this.incorrectAnswers += 1;
         
+        JOptionPane.showMessageDialog(null, "Incorrect!", "Incorrect", JOptionPane.WARNING_MESSAGE);
+        
         if (incorrectAnswers >= 3) {
             finishPuzzle(Status.Incorrect);
         }
@@ -253,11 +258,11 @@ public class PuzzleScreen extends javax.swing.JFrame {
     
     private void finishPuzzle(Status result) {
         if (result == Status.Correct) {
-            //Code
+            JOptionPane.showMessageDialog(null, "Correct!", "Correct", JOptionPane.PLAIN_MESSAGE);
         } else if (result == Status.Incorrect) {
-            // Code
+            JOptionPane.showMessageDialog(null, "3 Attempts used!", "Incorrect", JOptionPane.ERROR_MESSAGE);
         } else if (result == Status.Skipped) {
-            // Code
+            JOptionPane.showMessageDialog(null, "Skipped!", "Skipped", JOptionPane.WARNING_MESSAGE);
         }
     }
     
