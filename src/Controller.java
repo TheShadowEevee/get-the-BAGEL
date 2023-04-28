@@ -343,34 +343,11 @@ public class Controller extends javax.swing.JFrame {
     // TODO: Implement actual gameplay
     private void updateAdventure() {
         
-        // Player player = new Player(); - Replace this with world class
-        
         adventurePane.setText(
                 this.adventureContextHead + "\n\n" +
                 CurrentRoom.currentDescription + "\n\n" +
                 "What would you like to do?"
         );
-    }
-    
-    // Update player name
-    private void updatePlayerName() {
-        //String newName = playerNameTextField.getText();
-        //Ted.changeName(newName);
-        
-        //updateStatistics();
-    }
-    
-    // Manage player health
-    private void healPlayer(int heal) {
-        Ted.increaseHP(heal);
-        
-        updateStatistics();
-    }
-    
-    private void damagePlayer(int damage) {
-        Ted.decreaseHP(damage);
-        
-        updateStatistics();
     }
     
     // Update player location
