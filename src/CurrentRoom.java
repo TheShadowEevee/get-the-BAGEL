@@ -1,4 +1,4 @@
-public class CurrentRoom extends Exception {
+public class CurrentRoom {
     /**
      * doors: this is an array of int arrays, these arrays should be the addresses of the room on the OTHER side
      * of the "door", and "door" is a general term for any exit from a room, so staircase or actual door
@@ -10,7 +10,7 @@ public class CurrentRoom extends Exception {
     /**
      * this is the description of the room, can be pulled and printed when you enter the room
      */
-    static String currentDescription = "There is a door to the East, a staircase going down to the South, and a staircase going up to the North.";
+    static String currentDescription = "In this sterial white room, you see a staircase going up in the North, a door to the East, and a staircase going down in the South.";
 
     /**
      * updateRoom() takes the new room's address and finds the case for it and updates the static variables for that room.
