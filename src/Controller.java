@@ -40,7 +40,7 @@ public class Controller extends javax.swing.JFrame {
         SouthMovementButton = new javax.swing.JButton();
         WestMovementButton = new javax.swing.JButton();
         EastMovementButton = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        PodiumButton = new javax.swing.JButton();
         menuBar = new javax.swing.JMenuBar();
         menuFileDropdown = new javax.swing.JMenu();
         quitMenuButton = new javax.swing.JMenuItem();
@@ -129,7 +129,12 @@ public class Controller extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("jButton1");
+        PodiumButton.setText("Podium");
+        PodiumButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PodiumButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -144,7 +149,7 @@ public class Controller extends javax.swing.JFrame {
                         .addGap(73, 73, 73)
                         .addComponent(EastMovementButton))
                     .addComponent(SouthMovementButton)
-                    .addComponent(jButton1))
+                    .addComponent(PodiumButton))
                 .addGap(91, 91, 91))
         );
         jPanel1Layout.setVerticalGroup(
@@ -158,7 +163,7 @@ public class Controller extends javax.swing.JFrame {
                         .addGap(59, 59, 59)
                         .addComponent(SouthMovementButton))
                     .addComponent(WestMovementButton)
-                    .addComponent(jButton1))
+                    .addComponent(PodiumButton))
                 .addGap(70, 70, 70))
         );
 
@@ -240,6 +245,10 @@ public class Controller extends javax.swing.JFrame {
         this.movePlayer(3);
     }//GEN-LAST:event_WestMovementButtonActionPerformed
 
+    private void PodiumButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PodiumButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PodiumButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -278,11 +287,11 @@ public class Controller extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton EastMovementButton;
     private javax.swing.JButton NorthMovementButton;
+    private javax.swing.JButton PodiumButton;
     private javax.swing.JButton SouthMovementButton;
     private javax.swing.JButton WestMovementButton;
     private javax.swing.JTextPane adventurePane;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
