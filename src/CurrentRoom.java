@@ -13,6 +13,12 @@ public class CurrentRoom {
     static String currentDescription = "In this sterile white room, you see a staircase going up in the North, a door to the East, and a staircase going down in the South.";
 
     /**
+     * this is if the doors/staircases are locked or not, this is changed by the puzzle class
+     * if true = doors are locked, you can't move rooms; false = doors are unlocked, you can move
+     */
+    static boolean isLocked = false;
+
+    /**
      * updateRoom() takes the new room's address and finds the case for it and updates the static variables for that room.
      * @param address = address array of the new room
      */
