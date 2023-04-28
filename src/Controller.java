@@ -1,3 +1,5 @@
+import PuzzleScreen.Status;
+import javax.swing.JOptionPane;
 /**
  *  Copyright (c) 2023 Michael Malloy, Enter-Name
  *  CNIT 25501 Final Project - GET THE bagel
@@ -247,6 +249,12 @@ public class Controller extends javax.swing.JFrame {
 
     private void PodiumButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PodiumButtonActionPerformed
         // TODO add your handling code here:
+        if(CurrentRoom.isLocked){
+            PuzzleScreen puzzle = new PuzzleScreen(Ted);
+            puzzle.puzzleScreen(Ted);
+        } else {
+            JOptionPane.showMessageDialog(null, "You approach the podium to find the puzzle already complete!", "Unlocked", JOptionPane.PLAIN_MESSAGE);
+        }
     }//GEN-LAST:event_PodiumButtonActionPerformed
 
     /**
@@ -314,7 +322,6 @@ public class Controller extends javax.swing.JFrame {
     private void setupGame() {
         // Setup new Player
         this.Ted = new Player("Ted Bagelson");
-        PuzzleScreen puzzle = new PuzzleScreen(Ted);
         
         adventureContextHead = 
                 "You have woken up in a strange house. Looking around, your surroundings seem familiar yet foreign.\n" +
@@ -322,7 +329,6 @@ public class Controller extends javax.swing.JFrame {
         
         updateStatistics();
         updateAdventure();
-        puzzle.puzzleScreen(Ted);
     }
     
     // Update text boxes
