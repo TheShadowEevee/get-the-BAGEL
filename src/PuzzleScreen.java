@@ -51,7 +51,7 @@ public class PuzzleScreen extends javax.swing.JFrame {
         quitMenuButton = new javax.swing.JMenuItem();
         menuEditDropdown = new javax.swing.JMenu();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("[Bagel] - Development Build");
         setAlwaysOnTop(true);
         setMinimumSize(new java.awt.Dimension(400, 200));
@@ -117,7 +117,7 @@ public class PuzzleScreen extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SubmitAnswerButton)
                     .addComponent(SkipButton))
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jSplitPane2.setRightComponent(jPanel1);
@@ -214,7 +214,7 @@ public class PuzzleScreen extends javax.swing.JFrame {
     private javax.swing.JMenuItem quitMenuButton;
     // End of variables declaration//GEN-END:variables
     
-    private void startPuzzle() {
+    private void startPuzzle() { 
         puzzle = new Puzzle();
         
         puzzle.newPuzzle();
@@ -258,7 +258,6 @@ public class PuzzleScreen extends javax.swing.JFrame {
         switch (result) {
             case Correct:
                 JOptionPane.showMessageDialog(this, "Correct!", "Correct", JOptionPane.INFORMATION_MESSAGE);
-                CurrentRoom.isLocked = false;
                 break;
             case Incorrect:
                 JOptionPane.showMessageDialog(this, "3 Attempts used!", "Incorrect", JOptionPane.ERROR_MESSAGE);
@@ -271,6 +270,7 @@ public class PuzzleScreen extends javax.swing.JFrame {
                 break;
         }
         
+        CurrentRoom.isLocked = false;
         dispose();
         
     }
