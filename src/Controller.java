@@ -225,19 +225,19 @@ public class Controller extends javax.swing.JFrame {
     }//GEN-LAST:event_quitMenuButtonActionPerformed
 
     private void NorthMovementButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NorthMovementButtonActionPerformed
-        // TODO add your handling code here:
+        this.movePlayer(0);
     }//GEN-LAST:event_NorthMovementButtonActionPerformed
 
     private void EastMovementButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EastMovementButtonActionPerformed
-        // TODO add your handling code here:
+        this.movePlayer(1);
     }//GEN-LAST:event_EastMovementButtonActionPerformed
 
     private void SouthMovementButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SouthMovementButtonActionPerformed
-        // TODO add your handling code here:
+        this.movePlayer(2);
     }//GEN-LAST:event_SouthMovementButtonActionPerformed
 
     private void WestMovementButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WestMovementButtonActionPerformed
-        // TODO add your handling code here:
+        this.movePlayer(3);
     }//GEN-LAST:event_WestMovementButtonActionPerformed
 
     /**
@@ -336,8 +336,6 @@ public class Controller extends javax.swing.JFrame {
                 "What would you like to do?"
         );
     }
-
-    // Switch to NSEW Buttons
     
     // Update player name
     private void updatePlayerName() {
