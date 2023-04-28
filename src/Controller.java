@@ -6,6 +6,7 @@
 public class Controller extends javax.swing.JFrame {
 
     static Player Ted = null;
+    static CurrentRoom Room = null;
     
     /**
      * Creates new form Controller
@@ -40,6 +41,7 @@ public class Controller extends javax.swing.JFrame {
         SouthMovementButton = new javax.swing.JButton();
         WestMovementButton = new javax.swing.JButton();
         EastMovementButton = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         menuBar = new javax.swing.JMenuBar();
         menuFileDropdown = new javax.swing.JMenu();
         quitMenuButton = new javax.swing.JMenuItem();
@@ -128,6 +130,8 @@ public class Controller extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("jButton1");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -140,7 +144,8 @@ public class Controller extends javax.swing.JFrame {
                         .addComponent(WestMovementButton)
                         .addGap(73, 73, 73)
                         .addComponent(EastMovementButton))
-                    .addComponent(SouthMovementButton))
+                    .addComponent(SouthMovementButton)
+                    .addComponent(jButton1))
                 .addGap(91, 91, 91))
         );
         jPanel1Layout.setVerticalGroup(
@@ -153,7 +158,8 @@ public class Controller extends javax.swing.JFrame {
                         .addComponent(NorthMovementButton)
                         .addGap(59, 59, 59)
                         .addComponent(SouthMovementButton))
-                    .addComponent(WestMovementButton))
+                    .addComponent(WestMovementButton)
+                    .addComponent(jButton1))
                 .addGap(70, 70, 70))
         );
 
@@ -277,6 +283,7 @@ public class Controller extends javax.swing.JFrame {
     private javax.swing.JButton WestMovementButton;
     private javax.swing.JTextPane adventurePane;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -299,6 +306,7 @@ public class Controller extends javax.swing.JFrame {
     private void setupGame() {
         // Setup new Player
         this.Ted = new Player("Ted Bagelson");
+        this.Room = new CurrentRoom();
         //PuzzleScreen puzzle = new PuzzleScreen();
         
         adventureContextHead = 
@@ -357,7 +365,7 @@ public class Controller extends javax.swing.JFrame {
     // Update player location
     private void movePlayer(String direction) {
 
-        if (/*doorNullTest*/true) {
+        if (Room.doorNullTest) {
             //MOVETOTHEDOORDANGIT()
         } else {
             // TODO: Make something happen visually on fail, this means the player is trying to move OOB
