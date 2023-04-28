@@ -326,7 +326,7 @@ public class Controller extends javax.swing.JFrame {
         
         adventurePane.setText(
                 this.adventureContextHead + "\n\n" +
-                "There is a door to the East, a staircase going down to the South, and a staircase going up to the North.\n\n" +
+                CurrentRoom.currentDescription + "\n\n" +
                 "What would you like to do?"
         );
     }
