@@ -23,7 +23,7 @@ public class Puzzle {
             int intAnswer;
             int a = r.nextInt(100);
             int b = r.nextInt(100);
-            int operation = r.nextInt(4);
+            int operation = r.nextInt(3);
 
             switch (operation){
                 case 0: //+
@@ -40,14 +40,6 @@ public class Puzzle {
                     intAnswer = a*b;
                     answer = String.valueOf(intAnswer);
                     puzzleText = a + " * " + b + " = ?";
-                    break;
-                case 3: //^
-                    intAnswer = a;
-                    for(int i = 0; i < b; i++){
-                        intAnswer *= a;
-                    }
-                    answer = String.valueOf(intAnswer);
-                    puzzleText = a + "^" + b + " = ?";
                     break;
                 default:
                     System.out.println("error in generating math problem");
