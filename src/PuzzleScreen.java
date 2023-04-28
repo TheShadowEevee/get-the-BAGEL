@@ -258,6 +258,7 @@ public class PuzzleScreen extends javax.swing.JFrame {
         switch (result) {
             case Correct:
                 JOptionPane.showMessageDialog(this, "Correct!", "Correct", JOptionPane.INFORMATION_MESSAGE);
+                CurrentRoom.isLocked = false;
                 break;
             case Incorrect:
                 JOptionPane.showMessageDialog(this, "3 Attempts used!", "Incorrect", JOptionPane.ERROR_MESSAGE);
