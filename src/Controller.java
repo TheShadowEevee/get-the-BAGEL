@@ -369,8 +369,9 @@ public class Controller extends javax.swing.JFrame {
     
     // Update player location
     private void movePlayer(int direction) {
-
-        if (CurrentRoom.doorNullTest(direction)) {
+        
+        if (CurrentRoom.doorNullTest(direction) && !CurrentRoom.isLocked) {
+            Ted.changeRoom(CurrentRoom.currentDoors[direction]);
             CurrentRoom.updateRoom(CurrentRoom.currentDoors[direction]);
         } else {
             // TODO: Make something happen visually on fail, this means the player is trying to move OOB
