@@ -30,4 +30,4 @@ jobs:
         # Artifact name
         name: Get-The-Bagel.jar
         # A file, directory or wildcard pattern that describes what to upload
-        path: ./dist/FinalProjectAAAAAAAAAA.jar
+        path: ./dist/get-the-BAGEL.jar
